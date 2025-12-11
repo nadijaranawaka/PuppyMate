@@ -1,0 +1,413 @@
+/* common */
+
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+/* navigation bar */
+nav{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.001em 0.64em rgba(0,0,0,0.1);
+}
+nav p{
+    font-size: clamp(1.5rem,5vw,7rem);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin:0;
+}
+.logopic{
+    width:clamp(100px,10vw,200px);
+    height: auto;
+    display: block;
+}
+.vline{
+    width: 5px;
+    height: 530px;
+    background: black;
+    border: none;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+header{
+    position: relative;
+    width:47.5vw;
+
+}
+header h1{
+    display: flex;
+    justify-content: right;
+    margin:0;
+    padding-inline: 10px;
+    padding-top: 10px;
+    font-size: clamp(24px,5vw,51px);
+    font-family: 'BBH Sans Hegarty', sans-serif;
+    text-align: right;
+}
+header p{
+    display:flex;
+    justify-content: right;
+    margin:0;
+    padding-inline:10px;
+    font-size: clamp(16px,2vw,22px);
+    font-family: 'Lobster', cursive;
+    text-align: right;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+#generator{
+    width:95vw;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background:#f8f6f6;
+    height: max-content;
+}
+.steps{
+    position: relative;
+    width:45vw;
+    margin-left: 0;
+    margin-right: 0;
+}
+.flex-screen{
+    display: flex;
+    justify-content: flex-start;
+    gap:2vw
+}
+form{
+    font-family: 'Smooch Sans', sans-serif;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    position:relative;
+    background-color: white;
+    margin:20px;
+    padding:10px;
+    width: 40vw;
+    height: 530px; /*this will change*/
+    box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display:block;
+}
+.step-words{
+    padding-left: 15px;
+}
+.step-words span{
+    font-size: clamp(16px,3vw,24px);
+    font-family:'BBH Sans Hegarty', sans-serif;
+}
+.step-words p{
+    font-size: clamp(12px,3vw,18px);
+    font-family: 'Signika', sans-serif;
+}
+#describe{
+    font-size: clamp(14px,2vw,18px);
+    font-weight: bold;
+}
+/* form upper  */
+.flex-top{
+    display:flex;
+    width: 100%;
+    height: 8vw;
+    justify-content: space-between;
+}
+.form-right{
+    padding: 8px 10px;
+}
+.form-right div{
+    width:180px;
+}
+.form-right .second{
+    padding-top: 10px;
+}
+
+/* first input field */
+.first{
+    width:70%;
+    padding-top: 8px;
+    padding-left: 8px;
+}
+#desc-text{
+    width:100%;
+    height: 7.5vw;
+    border: hidden;
+    background: #F0F2F5;
+    border-radius: 10px;
+    border: 1px solid #E0E4EB; 
+    resize: none;
+    transition: background 0.25s;
+    box-sizing: border-box;
+    padding: 10px;
+}
+#desc-text:focus{
+    outline:none;
+    background-color: #dfe0e3;
+}
+textarea ::placeholder{
+    padding: 15px;
+}
+
+/* second input field */
+#pov-text{
+    font-size: clamp(14px,2vw,18px);
+    font-weight: bold;
+}
+#pov{
+    width:100%;
+    height: 2.9vw;
+    border-radius: 10px;
+    background:#F0F2F5;
+    border:hidden;
+    border: 1px solid #E0E4EB;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#pov:focus{
+    outline:none;
+    background-color: #dfe0e3;
+}
+/* third input field  */
+#tone-text{
+    font-size: clamp(14px,2vw,18px);
+    font-weight: bold;
+}
+#tone{
+    width:100%;
+    height: 2.9vw;
+    border-radius: 10px;
+    background:#F0F2F5;
+    border:hidden;
+    border: 1px solid #E0E4EB;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#tone:focus{
+    outline:none;
+    background-color: #dfe0e3;
+}
+/* emotion selector  */
+#Aimodel1 p{
+    font-size: clamp(14px,2vw,18px);
+    font-weight: bold;
+    margin:0;
+    margin-top: 35px;
+    padding-inline:8px;
+}
+.emotion-buttons{
+    padding:10px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:1px;
+}
+.emotion-buttons button{
+    font-family: 'PT Sans Narrow', sans-serif;;
+    font-size: clamp(12px,2vw,18px);
+    width:auto;
+    height: 2vw;
+    color: black;
+    border:hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.emotion-buttons button:hover{
+    background-color: #ecedef;
+}
+
+/* final input */
+#length-text{
+    font-size: clamp(14px,2vw,18px);
+    font-weight: bold;
+    padding-inline: 8px;
+}
+#length-radio{
+    padding-left:8px;
+    cursor: pointer;
+
+}
+#length-radio label{
+    font-size:clamp(10px,1.5vw,18px);
+}
+#length-radio input{
+    cursor: pointer;
+}
+#length-radio input:hover{
+    background-color: #dfe0e3;
+}
+
+.generate-butn{
+    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    bottom:10px;
+    right:3%;
+    /* transformX:(-50%); */
+    width:10vw;
+    height: 2.6vw;
+    border-radius: 10px;
+    border:hidden;
+    color: white;
+    background-color: black;
+    font-size: clamp(14px,2vw,18px);
+    cursor: pointer;
+    overflow: hidden;
+}
+#pencil{
+    padding-left: 10px;
+}
+/* information part 1 */
+aside{
+    padding-top:50px;
+}
+.second-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.first-part{
+    width: max-content;
+    margin-left: 30px;
+    padding-left:50px;
+
+}
+aside h1{
+    margin:0;
+    padding-top:10px;
+    font-size: clamp(28px,3vw,32px);
+    font-family: 'Fjalla One', sans-serif;
+    position: relative;
+    text-align:right;
+}
+aside h3{
+    margin:0;
+    width:100%;
+    text-align: right;
+    font-family: 'Lobster', cursive;
+}
+.image1{
+    width:40vw;
+    height: auto;
+    padding-right: 100px;
+    padding-top:20px;  
+}
+aside p{
+    font-size: clamp(14px,2vw,18px);
+    font-family: 'Signika', sans-serif;
+    text-align: right;
+    font-weight: lighter;
+}
+aside b{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+/* output section */
+.output-popup{
+    margin-top:20px;
+    margin-inline:80px;
+    padding:20px;
+    border-radius: 24px;
+    background-color: #f8f6f6;
+}
+.popup-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 59%;
+}
+.popup-header h1{
+    align-items: center;
+    font-size: clamp(36px,4vw,40px);
+}
+.popup-header button{
+    border: hidden;
+    background-color: #f8f6f6;
+    color: black;
+    padding-left: 20px;
+    padding-bottom: 20px;
+
+}
+#output{
+    padding-inline:40px;
+}
+#output p{
+    display: flex;
+    
+}
+
+.copy{
+    border:hidden;
+    background-color: #f8f6f6;
+    align-content: right;
+    margin-left: auto;
+    cursor: pointer;
+    padding: 0.5vw;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.copy:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+#generateagain{
+    position: relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:10vw;
+    height: 2.6vw;
+    border-radius: 10px;
+    border:hidden;
+    color: white;
+    background-color: black;
+    font-size: clamp(14px,2vw,18px);
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 2vw;
+}
+
+/* the end */
+ footer{
+    padding-inline: 80px;
+    margin-bottom:20px;
+ }
+ .logo-flex{
+    display: flex;
+    align-items: center;
+ }
+
+ .logo-flex p{
+    padding-left: 20px;
+    margin-top: 0;
+ }
+ footer h3{
+    padding-left: 20px;
+    margin-bottom: 0;
+ }
+.fa-copyright{
+    font-weight: lighter;
+    opacity: 0.6;
+}
+.lgo-right{
+    align-content:right;
+    margin-left: auto;
+    padding-top:10px;
+}
+.lgo-right p{
+    margin: 0px;
+}
+#socials{
+    padding-left: 20px;
+    margin-top:10px;
+}
+#socials a{
+    font-size: 2vw;
+    color: black;
+}

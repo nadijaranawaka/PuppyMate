@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PuppyMate Quote generator</title>
+        <link href="styles/quote.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    </head>
+        <nav>
+            <img src="images/logo2.jpg" alt="Cute puppy logo" class="logopic">
+        </nav>
+        <main>
+            <section id="generator">
+                <hr class="vline"> 
+                
+                <div class="flex-screen">
+                    <div>
+                        <header>
+                            <h1>PUPPYMATE QUOTE<br> GENERATOR</h1>
+                            <P>Speak your heart without saying a word<br> Let our little pup craft the perfect quote for you.</P>
+                        </header>
+                        <div class="step-words">
+                            <p>
+                                <span>Pick up 3 emotions</span><br>
+                                Tell us how you feel, and PuppyMate will listen with wagging tails.
+                                <hr class="steps">
+                            </p>
+                            <p>
+                                <span>Click ‘Generate’</span><br>
+                                Watch our AI pup fetch the perfect words, just for you.
+                                <hr class="steps">
+                            </p>
+                            <p>
+                                <span>Read, edit, and save</span><br>
+                                Find your favorite, tweak it if you want, and save it in your cozy den.
+                                <hr class="steps">
+                            </p>
+                            <p>
+                                <span>Use or share anywhere</span><br>
+                                Spread your pawsome quotes wherever your heart desires.
+                                <hr class="steps">
+                            </p>
+                        </div>
+                    </div>
+                    <form id="Aimodel1" action="javascript:void(0);" method="post">
+                        <div>
+                            <div class="flex-top">
+                                <div class="first">
+                                    <label id="describe">Tell us what the quote should feel like*</label><br>
+                                    <textarea id="desc-text" name="describe"  placeholder=" An inspirational quote about overcoming challenges"></textarea>
+                                </div>
+                                <div class="form-right">
+                                    <div>
+                                        <label id="pov-text">POV*</label><br>
+                                        <select id="pov" name="POV" required>
+                                            <option disabled selected></option>
+                                            <option value="first-person" name="fpp">First-Person</option>
+                                            <option value="second-person" name = "spp">Second-Person</option>
+                                            <option value="third-person" name = "tpp">Third-Person</option>
+                                        </select>
+                                    </div>
+                                    <div class="second">
+                                        <label id="tone-text">Tone*</label><br>
+                                        <select id="tone" name="TONE" required>
+                                            <option disabled selected></option>
+                                            <option value="informative">Informative</option>
+                                            <option value="engaging">Engaging</option>
+                                            <option value="humurous">Humorous</option>
+                                            <option value="serious">Serious</option>
+                                            <option value="humurous">Bold</option>
+                                            <option value="Philosophical">Philosophical</option>
+                                            <option value="mysterious">Mysterious</option>
+                                            <option value="sensitive">Sensitive</option>
+                                        </select>
+                                </div>
+                                </div>
+                            </div>
+                            <p>Pick one, two, or three emotions to guide your quote.*</p>
+                            <div class="emotion-buttons">
+                                <button type="button">SAD😢</button>
+                                <button type="button">HAPPY😍</button>
+                                <button type="button">LONELY😶‍🌫️</button>
+                                <button type="button">CONFIDENT😎</button>
+                                <button type="button">ANGRY😡</button>
+                                <button type="button">PEACEFUL🌸</button>
+                                <button type="button">GRATEFUL😌</button>
+                                <button type="button">HEART-BROKEN</button>
+                                <button type="button">INSPIRED✨</button>
+                                <button type="button">LOST😕</button>
+                                <button type="button">MOTIVATED💪</button>
+                                <button type="button">ANXIOUS🌀</button>
+                                <button type="button">ROMANTIC🌹</button>
+                                <button type="button">HOPEFUL🌈</button>
+                                <button type="button">BETRAYED🥀</button>
+                                <button type="button">SAVAGE😈</button>
+                                <button type="button">PLAYFUL🐾</button>
+                                <button type="button">REGRETFUL⏳</button>
+                                <button type="button">FOCUSED🎯</button>
+                                <button type="button">EMPOWERED👑</button>
+                            </div>
+                            <div>
+                                <label id="length-text">Length*</label><br>
+                                <div id="length-radio">
+                                    <label><input id="length-short" name="length" type="radio" value="short" required>Short (1-5 words)</label>
+                                    <label><input id="length-medium" name="length" value="medium" type="radio">Medium (6-10 words)</label>
+                                    <label><input id="length-long" name="length" value="long" type="radio">Long (12+ words)</label>
+                                </div>
+                            </div>
+                        <button class="generate-butn" type="submit"><i id="pencil" class="fa-solid fa-pencil"></i>Generate</button>
+                    </form>
+                </div>  
+                
+            </section>
+            <section>
+                <!--Put up too tired to craft on section here if figured out-->
+            </section>
+        </main>
+        <aside>
+            <hr>
+            <div class="second-flex">
+                <div class="first-part">
+                    <h1>Let your feelings shape the words.</h1>
+                    <h3>Craft meaningful words that leave a pawprint on hearts</h3>
+                    <p> <b>💼 Professionals</b><br>
+                        Generate impactful quotes for presentations, LinkedIn posts, speaking events, and content marketing.<br>
+                        <br>
+                        <b>🛍️ Print-on-Demand Sellers</b><br>
+                        Create original quotes to print on apparel, mugs, and more — add meaning to your merchandise.<br>
+                        <br>
+                        <b>🎓 Students</b><br>
+                        Discover thought-provoking quotes for essays, discussions, and daily motivation.<br>
+                        <br>
+                        <b>👤 Individuals</b><br>
+                        Craft meaningful captions for your social posts, blogs, or personal journaling.<br>
+                        <br>
+                        <b>📱 Content Creators</b><br>
+                        Generate scroll-stopping quotes and captions to engage your audience with ease.
+                    </p>
+                </div>
+                <img src="images/additional.png" alt="cutepuppycartoons" class="image1">
+            </div>
+            
+        </aside>
+        <section class="output-popup">
+            <div class="popup-header">
+                <button class="close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></button>
+                <h1>Generated Quotes</h1>
+            </div>
+            <div id="output">
+                <button id='generateagain'>Generate Again</button>
+            </div>
+        </section>
+        <br><br>
+        <footer>
+            <hr>
+            <div class="logo-flex">
+                <img src="images/logo2.jpg" alt="Cute puppy logo" width="100" height="100">
+                <div>
+                    <h3>YOUR LOYAL PAL FOR EMOTIONAL<br> AND CREATIVE WRITING</h3>
+                    <p><i class="fa fa-copyright" aria-hidden="false"></i>2025-PuppyMate</p>
+                </div>
+                <div class="lgo-right">
+                    <p>Built By R.D.Nadija Ranawaka</p>
+                    <p>Powered by:GPT API</p>
+                    <div id="socials">
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-address-card" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <section id="footermenu">
+                <ul class="dropdown nav">
+                    <li>
+                        <a><strong>Emotional</strong></a>
+                        <ul>
+                            <li>Quote Generator</li>
+                            <li>Caption Generator</li>
+                            <li>Story Writer</li>
+                            <li>Poem Generator</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><strong>General</strong></a>
+                        <ul>
+                            <li>Paragragh Writer</li>
+                            <li>Summarizer</li>
+                            <li>Text Expander</li>
+                            <li>Paraphraser</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><strong>Utility</strong></a>
+                        <ul>
+                            <li>Brainstorm ideas</li>
+                            <li>Keyword Extractor</li>
+                            <li>Grammar checker</li>
+                            <li>Humanizer</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><strong>Profile</strong></a>
+                        <ul>
+                            <li>My Favourites</li>
+                            <li>My Creations</li>
+                            <li>Settings</li>
+                            <li>Tool Requests</li>
+                            <li>Feedback</li>
+                                <form class="feedback" action="#" method="POST">
+                                    <h1>Feedback Form</h1>
+                                    <button id="back">Back</button>
+                                    <div>
+                                        <label id="feedback-name">Name</label><br>
+                                        <input id="feedback-name" name="name" type="text" placeholder="Enter your name">
+                                    </div>
+                                    <div>
+                                        <label id="feedback-email">Email</label><br>
+                                        <input id="feedback-email" name="email" type="text" placeholder="Enter your name">
+                                    </div>
+                                    <div>
+                                        <label id="feedback-icon">Share your experience</label><br>
+                                        <img src="/images/emotions.jpg" alt="Puppy Emotion cartoons" width="100" height="auto"/><br>
+                                        <input id="feedback-icon" name="experience" type="range" min="0" max="5" width 50>
+                                    </div>
+                                    <div>
+                                        <textarea id="feedback-comment" name="comment" placeholder="Add  your thoughts" rows="7" cols="40"></textarea>
+                                    </div>
+                                    <input type="submit" id="feedback-submit" name="feedback-submit" value="SUBMIT">
+                                </form>
+                            <li>Terms Of Use</li>
+                                <section class="terms-page">
+                                    <p class="terms">
+                                        <span><h3>Terms and Conditions</h3></span>
+                                        <strong>Your agreement</strong><br>
+                                        Last Revised: June 17, 2025
+                                        Welcome to www.puppymate.ai. This site is provided as a service to our users and may be used for creative and informational purposes only. Because the Terms and Conditions contain legal obligations, please read them carefully.
+                                        <br>
+                                        1. YOUR AGREEMENT<br>
+                                        By using this Site, you agree to be bound by, and to comply with, these Terms and Conditions. If you do not agree, please do not use this site.<br>
+                                        PLEASE NOTE: We reserve the right, at our sole discretion, to change, modify or otherwise alter these Terms and Conditions at any time. Unless otherwise indicated, amendments will become effective immediately. Please review these Terms and Conditions periodically. Your continued use of the Site following the posting of changes and/or modifications will constitute your acceptance of the revised Terms and Conditions and the reasonableness of these standards for notice of changes. For your information, this page was last updated as of the date at the top of these terms and conditions.
+                                        <br>2. PRIVACY<br>
+                                        Please review our Privacy Policy, which also governs your visit to this Site, to understand our practices.
+                                        <br>3. LINKED SITES<br>
+                                        This Site may contain links to other independent third-party websites ("Linked Sites"). These Linked Sites are provided solely as a convenience to our users. Such Linked Sites are not under our control, and we are not responsible for and do not endorse the content of such Linked Sites, including any information or materials contained on such Linked Sites. You will need to make your own independent judgment regarding your interaction with these Linked Sites.
+                                        <br>4. GENERATED CONTENT AND USER RESPONSIBILITY<br>
+                                        All materials generated on this site are AI-assisted and meant for inspiration and personal use. The fact that content is generated on this site does not guarantee its originality, legality, or factual accuracy. We encourage users to review and edit all generated material before public or commercial use. PuppyMate is not responsible for user-generated content.
+                                        <br>5. DISCLAIMER OF WARRANTIES AND LIMITATION OF LIABILITY
+                                        <br>A. THIS SITE MAY CONTAIN INACCURACIES AND TYPOGRAPHICAL ERRORS. WE DO NOT WARRANT THE ACCURACY OR COMPLETENESS OF GENERATED MATERIALS OR THE RELIABILITY OF ANY ADVICE, OUTPUT, OR INFORMATION GENERATED. YOU EXPRESSLY UNDERSTAND AND AGREE THAT: (i) YOUR USE OF THE SITE IS AT YOUR SOLE RISK; (ii) THE SITE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS; (iii) WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT; (iv) WE MAKE NO WARRANTY REGARDING RESULTS OBTAINED FROM THIS SITE; (v) ANY MATERIAL DOWNLOADED OR GENERATED THROUGH THE SITE IS AT YOUR OWN DISCRETION AND RISK.
+                                        <br>B. UNDER NO CIRCUMSTANCES, INCLUDING NEGLIGENCE, SHALL WE BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE SITE OR GENERATED CONTENT.
+                                        <br><br>6. EXCLUSIONS AND LIMITATIONS<br>
+                                        SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR LIMITATIONS OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES. ACCORDINGLY, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
+                                        <br><br>7. PROPRIETARY RIGHTS<br>
+                                        This Site and all its contents (excluding AI-generated text) are owned by PuppyMate. You agree not to: (a) use PuppyMate branding without permission; (b) hold yourself out as sponsored by or affiliated with PuppyMate; (c) copy, modify, or reproduce the site structure or tools; (d) scrape or data mine the site; (e) reverse engineer any functionality on the site.
+                                        <br>8. INDEMNITY<br>
+                                        By using this Site, you agree to indemnify PuppyMate and its affiliates and hold them harmless from any claims, losses, damages, or legal fees arising from your use of the site or any violation of these Terms and Conditions.
+                                        <br>9. COPYRIGHT AND TRADEMARK NOTICE<br>
+                                        All original content on this site is protected by copyright and other intellectual property laws. PuppyMate™ and its visual identity are trademarks of the brand. AI-generated text is not copyright-enforced and may be used freely by users.
+                                        <br>10. INTELLECTUAL PROPERTY INFRINGEMENT CLAIMS<br>
+                                        It is our policy to respond promptly to claims of intellectual property infringement. Notices should be directed to: PuppyMate Legal [Insert your address here]support@puppymate.ai
+                                        <br>11. PLACE OF PERFORMANCE<br>
+                                        This Site is operated from [Insert Your Country/City]. If you access the Site from outside this location, you are responsible for compliance with your local laws.
+                                        <br>12. GENERAL<br>
+                                        A. If any provision of these Terms is deemed invalid, the rest shall remain in effect.B. These Terms constitute the full agreement between the user and PuppyMate regarding site use.C. No agency, partnership, or employment relationship is created as a result of these Terms.
+                                    </p>
+                                    <label><input type="checkbox" name="accept-terms" required>I confirm that I have read and accept the terms and conditions.</label>
+                                    <button id="cancel">CANCEL</button>
+                                    <button id="accept">ACCEPT</button>
+                                </section>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section> -->
+        </footer>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="model.js"></script>
+    <!-- <script type="module" src="/test.js"></script> -->
+    </body>
+</html>
