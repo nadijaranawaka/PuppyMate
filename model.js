@@ -33,7 +33,8 @@ app.post("/generate", async(req, res) => {
                      You are to generate those codes as a helpful Author \
                      Give only the output as one big string seperated with for each output and do not number them. as follows\
                      ```\
-                     <output1>|<output2>|"},
+                     <output1>|<output2>|....|<output10>```\
+                     Do not add | at the end of the whole output"},
                 {role: "user", content: `Generate 10 quotes which recalls the following: \
                     Description: ${input_dict.description} \
                     Tone: ${input_dict.tone} \

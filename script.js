@@ -115,9 +115,8 @@ function renderoutput(output){
         p.classList.add("row")
         p.innerHTML = `
             <img src="images/logo2.jpg" alt="Cute puppy logo" width="30" height="30">
-            <span class="outputText">${item}</span>  
-            [emotions selected by the user]
-            <button class="copy"><i class="fa fa-clone fa-2x" aria-hidden="true"></i></button>`;
+            <span class="outputText">"${item}"</span>  
+            <button class="copy"><span class="emotionlist">[emotions selected by the user]</span><i class="fa fa-clone fa-2x" aria-hidden="true"></i></button>`;
 
         // console.log(outputcontainer, document.getElementById("generateagain"))
         outputcontainer.insertBefore(p, document.getElementById("generateagain"))

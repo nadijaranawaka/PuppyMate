@@ -203,7 +203,7 @@ textarea ::placeholder{
     gap:1px;
 }
 .emotion-buttons button{
-    font-family: 'PT Sans Narrow', sans-serif;;
+    font-family: 'PT Sans Narrow', sans-serif;
     font-size: clamp(12px,2vw,18px);
     width:auto;
     height: 2vw;
@@ -254,12 +254,17 @@ textarea ::placeholder{
     border:hidden;
     color: white;
     background-color: black;
-    font-size: clamp(14px,2vw,18px);
+
+    font-family: 'BBH Sans Hegarty', sans-serif;
     cursor: pointer;
     overflow: hidden;
 }
 #pencil{
     padding-left: 10px;
+}
+.generatetext{
+    margin-left:5px;
+    font-size: clamp(14px,2vw,20px);
 }
 /* information part 1 */
 aside{
@@ -324,6 +329,7 @@ aside b{
 .popup-header h1{
     align-items: center;
     font-size: clamp(36px,4vw,40px);
+    font-family: 'Fjalla One', sans-serif;
 }
 .popup-header button{
     border: hidden;
@@ -340,12 +346,22 @@ aside b{
     display: flex;
     
 }
-
+.row{
+    margin:auto;
+    font-size: clamp(14px,2vw,18px)
+}
+.outputText{
+    font-size:clamp(14px,2.7vw,20px);
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+.emotionlist{
+    margin-right: 20px;
+}
 .copy{
     border:hidden;
     background-color: #f8f6f6;
     align-content: right;
-    margin-left: auto;
+    margin-left:auto;
     cursor: pointer;
     padding: 0.5vw;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -361,13 +377,14 @@ aside b{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    width:10vw;
+    width:12vw;
     height: 2.6vw;
     border-radius: 10px;
     border:hidden;
     color: white;
     background-color: black;
     font-size: clamp(14px,2vw,18px);
+    font-family:'BBH Sans Hegarty', sans-serif;
     cursor: pointer;
     overflow: hidden;
     margin-top: 2vw;
