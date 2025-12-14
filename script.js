@@ -11,10 +11,11 @@ const popupOutput = document.querySelector(".output");
 const generateagain = document.getElementById("generateagain");
 let data = null
 let outputs = []
+let outputcontainer = document.getElementById("output")
+let lastuserinputs = null
 
 //emotion buttons
 let selectedButtons = new Set();
-
 const color = [
   "#6CA6CD", // SAD 😢  → soft steel blue, calm and easy on eyes
   "#FFB84C", // HAPPY 😍 → warm amber-yellow, cheerful but not neon
@@ -38,6 +39,74 @@ const color = [
   "#8E44AD"  // EMPOWERED 👑 → royal purple, authority without glare
 ];
 
+function renderoutput(output){
+    //This function renders the output into the output popup
+    outputcontainer.innerHTML = "<button id='generateagain'>Generate Again</button>";
+
+    output.forEach(item => {
+        const p = document.createElement("p")
+        p.classList.add("row")
+        p.innerHTML = `
+            <img src="images/logo2.jpg" alt="Cute puppy logo" width="30" height="30">
+            <span class="outputText">"${item}"</span>  
+            <button class="copy"><span class="emotionlist">[emotions selected by the user]</span><i class="fa fa-clone fa-2x" aria-hidden="true"></i></button>`;
+
+        // console.log(outputcontainer, document.getElementById("generateagain"))
+        outputcontainer.insertBefore(p, document.getElementById("generateagain"))
+
+        //Add divider line
+        const hr = document.createElement("hr");
+        outputcontainer.insertBefore(hr, document.getElementById("generateagain"))
+        });
+
+}; 
+
+async function generateoutput(e) {
+    //This function takes converse with the API
+    if (e) e.preventDefault();
+
+    //1.Text area
+    const textvalue = descrip.value;
+
+    //2.POV
+    const povvalue = pov.value;
+
+    //3.TONE
+    const tonevalue = tone.value
+
+    //4. Buttons
+    const selectedButtonsValues = Array.from(selectedButtons).map(emotionButtons => emotionButtons.textContent);
+
+    //5.Length
+    const selectedlength = document.querySelector("input[name = 'length']:checked");
+    const lengthvalue = selectedlength ? selectedlength.value : "none selected";
+
+    const hasNewInput = textvalue || povvalue || tonevalue || selectedButtonsValues.length;
+    //store temp
+    const userinputs = hasNewInput ? {
+        description: textvalue,
+        pov: povvalue,
+        tone: tonevalue,
+        emotions: selectedButtonsValues,
+        length: lengthvalue
+    }:lastuserinputs;
+
+    lastuserinputs = userinputs
+    console.log(lastuserinputs)
+
+    //send to backend
+    const response = await fetch("http://localhost:3000/generate",{
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(userinputs)
+    });
+
+    data = await response.json();
+    console.log(data.output);
+    outputs = data.output.split("|")
+    renderoutput(outputs)
+
+};
 
 emotionButtons.forEach((emotionButtons,index) => {
     emotionButtons.addEventListener("click",() => {
@@ -61,79 +130,20 @@ emotionButtons.forEach((emotionButtons,index) => {
 
 
 // form submission
-form.addEventListener("submit",async(e) => {
-    e.preventDefault();
-
-    //1.Text area
-    const textvalue = descrip.value;
-
-    //2.POV
-    const povvalue = pov.value;
-
-    //3.TONE
-    const tonevalue = tone.value
-
-    //4. Buttons
-    const selectedButtonsValues = Array.from(selectedButtons).map(emotionButtons => emotionButtons.textContent);
-
-    //5.Length
-    const selectedlength = document.querySelector("input[name = 'length']:checked");
-    const lengthvalue = selectedlength ? selectedlength.value : "none selected";
-
-    //store temp
-    const userinputs = {
-        description: textvalue,
-        pov: povvalue,
-        tone: tonevalue,
-        emotions: selectedButtonsValues,
-        length: lengthvalue
-    };
-
-    //send to backend
-    const response = await fetch("http://localhost:3000/generate",{
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify(userinputs)
-    });
-
-    data = await response.json();
-    console.log(data.output);
-    outputs = data.output.split("|")
-    renderoutput(outputs)
-
-});
-
-//output popup
-let outputcontainer = document.getElementById("output")
-
-//refreses the output container
-function renderoutput(output){
-    outputcontainer.innerHTML = "<button id='generateagain'>Generate Again</button>";
-
-    output.forEach(item => {
-        const p = document.createElement("p")
-        p.classList.add("row")
-        p.innerHTML = `
-            <img src="images/logo2.jpg" alt="Cute puppy logo" width="30" height="30">
-            <span class="outputText">"${item}"</span>  
-            <button class="copy"><span class="emotionlist">[emotions selected by the user]</span><i class="fa fa-clone fa-2x" aria-hidden="true"></i></button>`;
-
-        // console.log(outputcontainer, document.getElementById("generateagain"))
-        outputcontainer.insertBefore(p, document.getElementById("generateagain"))
-
-        //Add divider line
-        const hr = document.createElement("hr");
-        outputcontainer.insertBefore(hr, document.getElementById("generateagain"))
-        });
-
-};  
-
-// renderoutput()
-document.addEventListener("click",e => {
+form.addEventListener("submit", generateoutput);
+outputcontainer.addEventListener("click", function(e){
     if (e.target.id === "generateagain") {
-        renderoutput(outputs)
+        generateoutput();
     }
 });
+//output popup
+
+
+//refreses the output container
+ 
+
+// renderoutput()
+
 
 //Copying output
 document.addEventListener("click",function(e){
