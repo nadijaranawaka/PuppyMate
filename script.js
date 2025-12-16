@@ -106,6 +106,8 @@ async function generateoutput(e) {
     outputs = data.output.split("|")
     renderoutput(outputs)
 
+    popup.classList.add("show")
+
 };
 
 emotionButtons.forEach((emotionButtons,index) => {
@@ -136,15 +138,10 @@ outputcontainer.addEventListener("click", function(e){
         generateoutput();
     }
 });
-//output popup
-
-
-//refreses the output container
- 
-
-// renderoutput()
-
-
+//closing the output
+popupClose.addEventListener("click",() => {
+    popup.classList.remove("show")
+});
 //Copying output
 document.addEventListener("click",function(e){
     const btn = e.target.closest(".copy");
