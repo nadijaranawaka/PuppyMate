@@ -9,6 +9,7 @@ const popup = document.querySelector(".output-popup");
 const popupClose = document.querySelector(".close");
 const popupOutput = document.querySelector(".output");
 const generateagain = document.getElementById("generateagain");
+const blurback = document.querySelector(".overlay")
 let data = null
 let outputs = []
 let outputcontainer = document.getElementById("output")
@@ -107,6 +108,7 @@ async function generateoutput(e) {
     renderoutput(outputs)
 
     popup.classList.add("show")
+    blurback.classList.add("show")
 
 };
 
@@ -141,6 +143,8 @@ outputcontainer.addEventListener("click", function(e){
 //closing the output
 popupClose.addEventListener("click",() => {
     popup.classList.remove("show")
+    blurback.classList.remove("show")
+
 });
 //Copying output
 document.addEventListener("click",function(e){

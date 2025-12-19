@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +14,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     </head>
+    <body>
+        
+        <div class="overlay"></div>
+
         <section class="output-popup">
             <div class="popup-header">
-                <button class="close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></button>
+                <button type="button" class="close" aria-label="close"><i class="fa fa-times fa-3x" aria-hidden="true"></i></button>
                 <h1>Generated Quotes</h1>
             </div>
             <div id="output">
@@ -69,7 +73,7 @@
                                 <div class="form-right">
                                     <div>
                                         <label id="pov-text">POV*</label><br>
-                                        <select id="pov" name="POV" required>
+                                        <select aria-label="pov-select" id="pov" name="POV" required>
                                             <option disabled selected></option>
                                             <option value="first-person" name="fpp">First-Person</option>
                                             <option value="second-person" name = "spp">Second-Person</option>
@@ -78,7 +82,7 @@
                                     </div>
                                     <div class="second">
                                         <label id="tone-text">Tone*</label><br>
-                                        <select id="tone" name="TONE" required>
+                                        <select aria-label="tone-select" id="tone" name="TONE" required>
                                             <option disabled selected></option>
                                             <option value="informative">Informative</option>
                                             <option value="engaging">Engaging</option>
@@ -172,16 +176,15 @@
                     <p>Built By R.D.Nadija Ranawaka</p>
                     <p>Powered by:GPT API</p>
                     <div id="socials">
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-address-card" aria-hidden="true"></i></a>
+                        <a aria-label="github" href="https://github.com/nadijaranawaka"><i class="fa-brands fa-github"></i></a>
+                        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/nadija-ranawaka-035243331/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a aria-label="Instagram" href="https://www.instagram.com/lindo._.27/"><i class="fa-brands fa-instagram"></i></a>
+                        <a aria-label="portfolio" href="#"><i class="fa fa-address-card" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
         </footer>
     <script type="module" src="script.js"></script>
     <script type="module" src="model.js"></script>
-    <!-- <script type="module" src="/test.js"></script> -->
     </body>
 </html>
