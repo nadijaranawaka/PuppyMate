@@ -10,6 +10,8 @@ const popupClose = document.querySelector(".close");
 const popupOutput = document.querySelector(".output");
 const generateagain = document.getElementById("generateagain");
 const blurback = document.querySelector(".overlay")
+const spinner = document.querySelector(".spinner")
+const formcontent = document.querySelector(".form-content")
 let data = null
 let outputs = []
 let outputcontainer = document.getElementById("output")
@@ -50,7 +52,7 @@ function renderoutput(output){
         p.innerHTML = `
             <img src="images/logo2.jpg" alt="Cute puppy logo" width="30" height="30">
             <span class="outputText">"${item}"</span>  
-            <button class="copy"><span class="emotionlist">[emotions selected by the user]</span><i class="fa fa-clone fa-2x" aria-hidden="true"></i></button>`;
+            <button class="copy"><span class="emotionlist"></span><i class="fa fa-clone fa-2x" aria-hidden="true"></i></button>`;
 
         // console.log(outputcontainer, document.getElementById("generateagain"))
         outputcontainer.insertBefore(p, document.getElementById("generateagain"))
@@ -65,6 +67,8 @@ function renderoutput(output){
 async function generateoutput(e) {
     //This function takes converse with the API
     if (e) e.preventDefault();
+    spinner.classList.add("show")
+    formcontent.style.display = "none"
 
     //1.Text area
     const textvalue = descrip.value;
@@ -134,7 +138,7 @@ emotionButtons.forEach((emotionButtons,index) => {
 
 
 // form submission
-form.addEventListener("submit", generateoutput);
+form.addEventListener("submit", generateoutput,);
 outputcontainer.addEventListener("click", function(e){
     if (e.target.id === "generateagain") {
         generateoutput();
@@ -144,6 +148,8 @@ outputcontainer.addEventListener("click", function(e){
 popupClose.addEventListener("click",() => {
     popup.classList.remove("show")
     blurback.classList.remove("show")
+    spinner.classList.remove("show")
+    formcontent.style.display = "block"
 
 });
 //Copying output

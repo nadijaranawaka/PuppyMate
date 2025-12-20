@@ -267,6 +267,29 @@ textarea ::placeholder{
     margin-left:5px;
     font-size: clamp(14px,2vw,20px);
 }
+.spinner{
+    display:none;
+    position:absolute;
+    top:42%;
+    left:45%;
+    transformX:(-50%,-50%);
+    height:80px;
+    width: 80px;
+    border: 2px solid;
+    border-color: black transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+.spinner.show{
+    display:block;
+}
+
+@keyframes spin{
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* information part 1 */
 aside{
     padding-top:20px;
