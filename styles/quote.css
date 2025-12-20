@@ -272,7 +272,7 @@ textarea ::placeholder{
     position:absolute;
     top:42%;
     left:45%;
-    transformX:(-50%,-50%);
+    transform:(-50%,-50%);
     height:80px;
     width: 80px;
     border: 2px solid;
