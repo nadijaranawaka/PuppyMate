@@ -12,7 +12,7 @@ PuppyMate generates custom, emotionally-aware quotes based on your inputs. Built
 |---|---|
 | Frontend | HTML, CSS, JavaScript |
 | AI | OpenAI API |
-| Prompting | One-shot Prompt Engineering |
+| Prompting | One-shot Prompt Engineering 
 
 ---
 
