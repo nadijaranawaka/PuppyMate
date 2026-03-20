@@ -122,7 +122,7 @@ node model.js
 ![Generated Quotes](/images/Screenshots-Demos/Generated%20Popup.png)
 
 ### 📹 Full Demo Video
-> [Watch the demo](/images/Screenshots-Demos/demo.mp4)
+> [Watch the demo](/images/Screenshots-Demos/demo.gif)
 
 ---
 
