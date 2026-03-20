@@ -92,7 +92,7 @@ npm install
 OPENAI_API_KEY=your_api_key_here
 
 # 4. Start the backend server
-node server.js
+node model.js
 
 # 5. Open index.html in your browser (or use Live Server)
 ```
